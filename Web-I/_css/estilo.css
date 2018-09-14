@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web'); /* importando fontes do google/fonts. você pode usar pelo link ou pelo @import. */
+@font-face {
+	font-family:'FonteLogo';
+	src: url("../_fonts/bubblegum-sans-regular.otf")
+}
+body{
+		font-family: 'Arial', sans-serif;
+		background-color: #dddddd;
+		color: black;
+		}
+		p {                             /* paragrafo. configurando tudo*/
+		text-align: justify; 
+		text-indent: 10px;
+			}
+
+/* depois de colocar a tag div depois do body e antes do fim do body, você edita aqui
+	mudar a interface. nesse caso, a largura da "página"  */
+
+div#interface{
+	width: 800px;
+	background-color: #ffffff;
+	margin: -20px auto 10px auto;
+	box-shadow: 4px 4px 20px rgba(0,0,0,.5);
+	padding:10px;
+
+}
+	
+			
+
+
