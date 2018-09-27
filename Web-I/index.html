@@ -5,31 +5,47 @@
     <title> Formulário de Cadastro</title>
     <link rel="stylesheet" href="_css/estilo.css"/>
     <link rel="stylesheet" href="_css/form.css"/>
+	
 
 </head>
 
 <body>
 <div id="interface">
+<form name="index" method="post" action="confirmacao.html" onsubmit ="return validacao();" >
    <fieldset id="usuario"> <legend>Identificação do Candidado</legend>
-   <p> <label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="32" maxlength="30" placeholder="Nome Completo"  required ></p>
+   <p> <label for="cNome">Nome:</label><input type="text" name="nome" id="cNome" size="32" maxlength="30" placeholder="Nome Completo"  required ></p>
    <p> <label for="cData">Data de Nascimento:</label> <input type="date" name="tData" id="cData" required ></p> 
-   <p><label for="cMail">E-mail:</label><input type="email" name="tmail" id="cMail" size="31" maxlength="40" placeholder="digite o seu e-mail" required> </p>
-   <p><label for="tCargo">Cargo: <select name="Opcoes" id="cOpt" required>
-        <option selected>Selecione o Cargo</option>
+   <p><label for="email">E-mail:</label><input type="text" id = "email" name="email" size="31" maxlength="40" placeholder="digite o seu e-mail" required> </p>
+   <p><label for="tCargo">Cargo: <select name="Opcoes" id="cOpt">
+        <option selected>Selecione o Cargo </option>
         <option>Presidente</option>
         <option>Senador</option>
         <option>Governador</option>
         <option>Deputado Federal</option>
         <option>Deputado Distrital</option>
     </select> </label></p>
-    <p><input type="submit" name="cEnvia" id="tEnvia" value="Cadastrar">  </p>
+    <p><input type="submit" name="envia" id="tEnvia" value="Cadastrar"/> </p>
+</form>
 </fieldset> 
-
-
-
-
-
-
 </div>
+
+ <script language="javascript">
+function validacao(){
+if(document.index.email.value=="" || document.index.email.value.indexOf('@')==-1 || document.index.email.value.indexOf('.')==-1){
+	
+	alert("Digite um e-mail válido!");
+	document.index.email.focus();
+	return false;
+}
+if(document.index.Opcoes.selectedIndex=="")
+	{
+		alert( "Preencha o cargo pretendido!" );
+		document.index.Opcoes.focus();
+		return false;
+	}
+}
+</script>
+
+
 </body>
 </html>
